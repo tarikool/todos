@@ -1,0 +1,26 @@
+ul{
+    list-style-type: none !important;
+}
+
+.list {
+    margin-bottom: 14px;
+}
+
+
+span[id^="done_"]{
+    margin-right: 45px;
+    display: none;
+    cursor: pointer;
+}
+
+
+span[id^="del_"] {
+    float: right;
+    display: none;
+    cursor: pointer;
+}
+
+
+input[id^="edit_"]{
+    display: none;
+}
