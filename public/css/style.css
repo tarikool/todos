@@ -21,6 +21,10 @@ span[id^="del_"] {
 }
 
 
+.edit {
+    display: none;
+}
+
 input[id^="edit_"]{
     display: none;
 }
