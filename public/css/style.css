@@ -20,11 +20,49 @@ span[id^="del_"] {
     cursor: pointer;
 }
 
+.line {
+    text-decoration: line-through;
+}
+
+
+
+
+span[id^="text_"] {
+    display: inline-block;
+    width: 80%;
+    cursor: pointer;
+}
+
 
 .edit {
     display: none;
 }
 
 input[id^="edit_"]{
+    display: none;
+}
+
+
+.footer {
+    position: fixed;
+    bottom: 30px;
+    width: 49%;
+    background-color: midnightblue;
+    color: white;
+    text-align: center;
+    border: 1px solid navy;
+    border-radius: 4px;
+}
+
+
+.menu {
+    margin-top: 60px;
+    margin-right: 35px;
+    cursor: pointer;
+}
+
+
+#clear {
+    cursor: pointer;
     display: none;
 }

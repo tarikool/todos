@@ -14,7 +14,11 @@ class ToDosController extends Controller
      */
     public function index()
     {
-        return view('todos.create');
+        $items = ToDos::all();
+
+//        return count($items);
+
+        return view('todos.create', compact('items'));
     }
 
     /**
@@ -69,7 +73,23 @@ class ToDosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return $request->all();
+//        return $request->all();
+        $item = ToDos::find($id);
+        if ( $request->operation == 'update')
+            $item->update($request->all());
+
+        if ( $request->operation == 'status')
+            $item->status ? $item->update(['status' => 0]) : $item->update(['status' => 1]);
+
+        if ($request->operation == 'delete')
+            $item->delete();
+
+        if ( $request->operation == 'clear')
+            ToDos::where('status', 1)->delete();
+
+        $data['item'] = $item;
+        $data['operation'] = $request->operation;
+        return $data;
     }
 
     /**
